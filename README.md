@@ -1,4 +1,4 @@
-# Green_Iron_Superpower
+# Green Iron Superpower
 A Green Iron Plan for Australia - The SuperPower Institute
 Founded in 2023 by economist Ross Garnaut and public
 policy expert Rod Sims, The Superpower Institute is a
