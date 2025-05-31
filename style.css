@@ -1,0 +1,176 @@
+/* style.css */
+
+/* Define color palette and fonts based on PDF */
+:root {
+    --primary-blue: #003B5C; /* Darker, more saturated blue from PDF headings/cover */
+    --primary-blue-dark: #002A42; /* For hover states or darker sections */
+    --accent-orange: #D9531E; /* Orange from 'Si' logo, adjusted for web */
+    --accent-orange-dark: #B8461A; /* Darker orange for hover */
+    --text-dark: #2D3748; /* Dark gray for body text (Tailwind gray-800) */
+    --text-light: #FFFFFF;
+    --background-light: #F7FAFC; /* Very light gray for page background (Tailwind gray-100) */
+    --border-color: #E2E8F0; /* Light gray for borders (Tailwind gray-300) */
+
+    --font-body: 'Inter', sans-serif;
+    --font-heading-main: 'Montserrat', sans-serif; /* For main titles like on the cover */
+    --font-heading-section: 'Montserrat', sans-serif; /* For section titles */
+    --font-meta: 'Lora', serif; /* For "REPORT", "MAY 2025" */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    line-height: 1.6;
+}
+
+/* Hero Section Specific Styles */
+.hero-section {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    /* If you have a specific background image from the PDF: */
+    /* background-image: url('path-to-your-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading-main);
+    font-weight: 700; /* Bold */
+}
+
+.report-meta-text {
+    font-family: var(--font-meta);
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/* General Heading Styles */
+h1, h2, h3 {
+    font-family: var(--font-heading-section);
+    color: var(--primary-blue); /* Default heading color */
+}
+
+h2 { /* Section titles */
+    color: var(--primary-blue);
+}
+
+/* Custom button styles if needed beyond Tailwind */
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: var(--text-light);
+    /* Add other styles like padding, border-radius if not using Tailwind for this */
+}
+.btn-primary:hover {
+    background-color: var(--accent-orange-dark);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+}
+.btn-secondary:hover {
+    background-color: var(--accent-orange);
+    color: var(--text-light);
+}
+
+
+/* Navigation styling */
+header nav a {
+    position: relative;
+    padding-bottom: 4px; /* Space for the underline */
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-orange);
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover::after,
+header nav a.active::after { /* You might need JS to add 'active' class */
+    width: 100%;
+}
+
+
+/* Section styling to mimic report structure */
+section {
+    margin-bottom: 2rem; /* Consistent spacing between sections */
+}
+
+section h2 { /* Section titles */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for the "Si" logo placeholder in hero */
+.hero-section .bg-accent-orange {
+    background-color: var(--accent-orange);
+}
+
+/* Footer styling */
+footer {
+    background-color: #1A202C; /* Tailwind gray-900 or similar dark */
+}
+
+footer h3 {
+    color: var(--text-light); /* White headings in footer */
+}
+
+/* Ensure rounded corners for elements as per instructions */
+/* Tailwind's `rounded-lg`, `rounded-md`, etc. are used in HTML. This is a general reminder. */
+/* For example, if you had a generic card class:
+.card {
+    border-radius: 0.5rem; // Corresponds to rounded-lg
+}
+*/
+
+/* Add any other custom styles needed to match the PDF more closely */
+
+/* Example of a two-column layout if needed for inner pages,
+   though Tailwind's grid/flexbox is preferred in the HTML */
+/*
+.two-column-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+*/
+
+/* Specific link styling */
+a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-orange-dark);
+}
+
+header a, footer a { /* Reset for header/footer links if they have different base styles */
+    color: inherit; /* Inherit from parent (e.g., text-light in header) */
+}
+header a:hover, footer a:hover {
+    color: var(--accent-orange); /* Specific hover for header/footer */
+    text-decoration: none; /* Remove underline for nav hover if preferred */
+}
+header nav a:hover {
+    color: var(--accent-orange); /* Keep orange hover for nav links */
+}
+
+
+/* Mobile menu specific styling */
+#mobile-menu a {
+    border-bottom: 1px solid var(--primary-blue-dark);
+}
+#mobile-menu a:last-child {
+    border-bottom: none;
+}
